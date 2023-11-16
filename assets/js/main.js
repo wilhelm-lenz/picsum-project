@@ -19,7 +19,6 @@ fetch("https://picsum.photos/v2/list")
       const imgElement = document.createElement("img");
       const figcaption = document.createElement("figcaption");
       const btnElement = document.createElement("button");
-      const btn = document.querySelectorAll(".cta-btn");
 
       imgElement.setAttribute("src", obj.download_url);
       imgElement.setAttribute("alt", obj.author);
