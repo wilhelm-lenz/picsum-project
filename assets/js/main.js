@@ -27,10 +27,8 @@ fetch("https://picsum.photos/v2/list")
 
       figureElement.append(imgElement, figcaption, btnElement);
       sectionElement.append(figureElement);
-      console.log(btnElement);
       for (let i = 0; i < btn.length; i++) {
         btn[i].addEventListener("click", () => {
-          console.log(data[i].id);
           if (i === data[i].id) {
           }
           window.open(data[i].url);
