@@ -1,22 +1,31 @@
 "use strict";
 
 fetch("https://picsum.photos/v2/list")
-  .then((res) => res.json())
+  .then((res) => {
+    console.log(res.status);
+    if (!res.ok) {
+      throw new Error(
+        `Status-Code: ${res.status}. An error has occurred. Please check!`
+      );
+    }
+    return res.json();
+  })
   .then((data) => {
     const sectionElement = document.querySelector(".gallary");
 
-    for (let i = 0; i < data.length; i++) {
+    data.forEach((obj) => {
+      console.log(obj);
       const figureElement = document.createElement("figure");
       const imgElement = document.createElement("img");
       const figcaption = document.createElement("figcaption");
       const btnElement = document.createElement("button");
       const btn = document.querySelectorAll(".cta-btn");
 
-      imgElement.setAttribute("src", data[i].download_url);
-      imgElement.setAttribute("alt", data[i].author);
+      imgElement.setAttribute("src", obj.download_url);
+      imgElement.setAttribute("alt", obj.author);
       btnElement.classList.add("cta-btn");
 
-      figcaption.textContent = data[i].author;
+      figcaption.textContent = obj.author;
 
       sectionElement.style.display = "grid";
       sectionElement.style.gridTemplateColumns =
@@ -27,13 +36,10 @@ fetch("https://picsum.photos/v2/list")
 
       figureElement.append(imgElement, figcaption, btnElement);
       sectionElement.append(figureElement);
-      for (let i = 0; i < btn.length; i++) {
-        btn[i].addEventListener("click", () => {
-          if (i === data[i].id) {
-          }
-          window.open(data[i].url);
-        });
-      }
-    }
+
+      btnElement.addEventListener("click", () => {
+        window.open(obj.url);
+      });
+    });
   })
   .catch((error) => console.log(error));
