@@ -2,7 +2,6 @@
 
 fetch("https://picsum.photos/v2/list")
   .then((res) => {
-    console.log(res.status);
     if (!res.ok) {
       throw new Error(
         `Status-Code: ${res.status}. An error has occurred. Please check!`
@@ -14,7 +13,6 @@ fetch("https://picsum.photos/v2/list")
     const sectionElement = document.querySelector(".gallary");
 
     data.forEach((obj) => {
-      console.log(obj);
       const figureElement = document.createElement("figure");
       const imgElement = document.createElement("img");
       const figcaption = document.createElement("figcaption");
