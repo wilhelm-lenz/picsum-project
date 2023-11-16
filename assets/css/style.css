@@ -14,8 +14,13 @@
 /* =================================== */
 
 @font-face {
-  font-family: "";
-  src: url();
+  font-family: "Rubik-Bold";
+  src: url("../fonts/Rubik-Bold.ttf");
+}
+
+@font-face {
+  font-family: "Rubik-Regular";
+  src: url("../fonts/Rubik-Regular.ttf");
 }
 
 /* =================================== */
@@ -56,7 +61,9 @@ body {
   font-weight: 400;
   color: #555;
   text-align: center;
-  padding-inline: 3%;
+  font-family: "Rubik-Regular";
+  background-color: #212529;
+  position: relative;
 }
 
 a {
@@ -72,9 +79,93 @@ a {
 
 .gallary {
   margin-top: 3rem;
+  padding-inline: 3%;
+  padding-bottom: 20rem;
 }
 
 h1 {
-  font-size: 2.4rem;
-  padding-top: 2rem;
+  width: 100%;
+  font-size: 4.4rem;
+  padding-block: 3rem;
+  color: #fff;
+  font-family: "Rubik-Bold";
+}
+
+figure {
+  padding-block: 8rem 0;
+}
+
+img {
+  width: 100%;
+
+  border: 3px solid #0ca678;
+  border-radius: 0.8rem;
+  object-fit: contain;
+}
+
+figcaption {
+  font-size: 1.8rem;
+  color: #fff;
+  margin-top: 2rem;
+}
+
+.cta-btn {
+  background-color: #0ca678;
+  margin-top: 3rem;
+  font-size: 2rem;
+  padding: 1.2rem 3.2rem;
+  border-radius: 0.8rem;
+  box-shadow: 2px -2px 8px rgba(255, 255, 255, 0.4);
+}
+
+.cta-btn:hover {
+  background-color: #087f5b;
+  color: #fff;
+}
+
+.footer {
+  padding-block: 3rem;
+  background-color: #0ca678;
+}
+
+.custom-shape-divider-top-1700143800 {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+  transform: rotate(180deg);
+  z-index: -1;
+}
+
+.custom-shape-divider-top-1700143800 svg {
+  position: relative;
+  display: block;
+  width: calc(138% + 1.3px);
+  height: 187px;
+}
+
+.custom-shape-divider-top-1700143800 .shape-fill {
+  fill: #0ca678;
+}
+
+.custom-shape-divider-bottom-1700145694 {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  overflow: hidden;
+  line-height: 0;
+}
+
+.custom-shape-divider-bottom-1700145694 svg {
+  position: relative;
+  display: block;
+  width: calc(138% + 1.3px);
+  height: 187px;
+}
+
+.custom-shape-divider-bottom-1700145694 .shape-fill {
+  fill: #0ca678;
 }
